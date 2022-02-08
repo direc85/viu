@@ -1,3 +1,5 @@
+cargo-features = ["strip"]
+
 [package]
 name = "viu"
 version = "1.3.0"
@@ -22,3 +24,6 @@ image = { version = "0.22.3", default-features = false, features = ["gif_codec",
 [target.'cfg(not(target_os = "wasi"))'.dependencies]
 ctrlc = { version = "3.1", features = ["termination"] }
 image = "0.23"
+
+[target.release]
+strip = "symbols"

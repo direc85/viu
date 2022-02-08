@@ -14,3 +14,7 @@ wapm.lock
 **/*.rs.bk
 
 .vscode
+
+RPMS/
+documentation.list
+Makefile
