@@ -53,6 +53,22 @@ Or without cloning:
 ```bash
 cargo install viu
 ```
+
+#### Building on Sailfish SDK
+
+The Sailfish SDK project files are most likely not compete. They seem to work (as in, an RPM file is produced) but improvements are welcome.
+
+Clone the project, checkout branch `sailfish` and compile the application for your Sailfish OS version and architecture:
+
+```bash
+sfdk config --push target SailfishOS-4.3.0.12-aarch64
+sfdk config --push snapshot viu
+sfdk build-shell qmake
+sfdk build
+```
+
+If all went well, you now have an RPM file in `RPMS`.
+
 <!--
 ##### [WASI](https://github.com/wasmerio/wasmer)
 First, you will need the WASI target installed in your Rust system:
@@ -97,6 +113,9 @@ There is an [AUR package available for Arch Linux](https://aur.archlinux.org/pac
 
 #### NetBSD
 Available in [`graphics/viu`](http://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/graphics/viu/README.html).
+
+#### Sailfish
+RPM packages are available in [OpenRepos.net](https://openrepos.net/content/direc85/viu).
 
 ## Usage
 
